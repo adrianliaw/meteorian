@@ -1,0 +1,7 @@
+{
+  "packages": {
+    "iron-router": {},
+    "jade": {},
+    "jquery-ui": {}
+  }
+}
