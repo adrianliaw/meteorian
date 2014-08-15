@@ -1,0 +1,27 @@
+template(name="cart")
+	.page-header
+		h1: small My Cart
+	table.table.table-striped.table-bordered.table-hover
+		thead
+			th Qty
+			th Product
+			th Price
+			th
+		tbody
+			each cartitems
+				tr(id="cartitem-#{_id}")
+					td= qty
+					td= productname
+					td {{currency price}}
+					td: span.label-important.label.removeci X
+			else
+				tr: td(colspan="4") No Products in Cart
+			tr
+				td.totalcol(colspan="2") SubTotal: 
+				td(colspan="2") {{currency cartitems.subtotal}}
+			tr
+				td.totalcol(colspan="2") Tax 6%: 
+				td(colspan="2") {{currency cartitems.tax}}
+			tr
+				td.totalcol(colspan="2") Total: 
+				td(colspan="2") {{currency cartitems.total}}

@@ -1,0 +1,29 @@
+template(name="products")
+    .page-header
+        h1
+            span.label-important.label= subcategory
+            small Products
+    each productlist
+        +product
+    else
+        .page-header
+            h1
+                small
+                    if catnotselected
+                        | Select A Category
+                    else
+                        | No Products Found
+
+template(name="product")
+    .well.span3
+        ul.nav.nav-list(id=_id)
+            li
+                img.thumbnail(src=thumb)
+            li: strong= name
+            li= desc
+            li {{currency price}}
+            input(type = "number", 
+                  min = "0", 
+                  placeholder = "Qty", 
+                  value = "0").input.input-mini.prodqty
+            a(href="#").btn.btn-mini.addcart Add

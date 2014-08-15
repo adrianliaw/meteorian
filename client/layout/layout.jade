@@ -1,0 +1,13 @@
+template(name="layout")
+    +navbar
+    .container
+        .row
+            .span2
+                +yield "categories"
+            .span7
+                if addingproduct
+                    +yield "addproduct"
+                else
+                    +yield "products"
+            .span3
+                +yield "cart"

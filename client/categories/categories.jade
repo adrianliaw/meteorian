@@ -1,0 +1,14 @@
+template(name="categories")
+    .page-header
+        h1: small Categories
+    ul.nav.nav-list
+        each Categories
+            li.nav-header(class="categ-#{_id}", 
+                          onclick="catElems['#{name}'].toggle()")
+                span.glyphicon.icon-play(class="icon-#{_id}")
+                | #{name}
+            ul.nav.nav-list(class="subcateg-#{_id}", hidden)
+                each SubCategories
+                    li: a(href="/#{../name}/#{name}")= name
+    br
+    a.btn(href="/AddProduct") Add Product
