@@ -22,7 +22,7 @@ Meteor.methods
 			if CartItems.findOne( product:product )
 				added = CartItems.findOne product:product
 				CartItems.remove added._id
-				qty = String Number added.qty + Number qty
+				qty = String Number(added.qty) + Number qty
 			CartItems.insert 
 				qty: qty
 				product: product
