@@ -9,7 +9,9 @@ Template.addproduct.events
 			source: (p.name for p in SubCategories.find().fetch())
 	"submit #inputs": (e, t) ->
 		cat = $("#cat").val()
+		#console.log cat
 		if not Categories.findOne( name:cat )
+		#	console.log true
 			Categories.insert name:cat
 		subcat = $("#subcat").val()
 		key = 
